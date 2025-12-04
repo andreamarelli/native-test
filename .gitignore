@@ -1,0 +1,28 @@
+# Modules & Libraries
+/node_modules
+/vendor
+/packages
+
+# Development
+.idea/
+npm-debug.log
+yarn-error.log
+_ide_helper.php
+.phpstorm.meta.php
+.phpunit.result.cache
+.cache
+sbom-*.json
+test-native.bat
+dist/
+build/
+
+# Envirnoment
+.env
+.channel
+.version
+.nvmrc
+/public/build/
+/public/hot
+/public/storage
+/public/basket
+/storage/
