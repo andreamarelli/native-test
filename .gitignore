@@ -15,6 +15,7 @@ sbom-*.json
 test-native.bat
 dist/
 build/
+nativephp/electron/dist/
 
 # Envirnoment
 .env

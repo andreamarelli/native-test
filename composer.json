@@ -1,16 +1,12 @@
 {
-    "$schema": "https://getcomposer.org/schema.json",
-    "name": "laravel/laravel",
-    "type": "project",
-    "description": "The skeleton application for the Laravel framework.",
-    "keywords": [
-        "laravel",
-        "framework"
-    ],
+    "name": "andreamarelli/native-test",
+    "description": "Test with nativephp/desktop and Laravel",
     "license": "MIT",
+    "version": "1.0.0",
     "require": {
         "php": "^8.4",
-        "laravel/framework": "^12.0"
+        "laravel/framework": "^12.0",
+        "nativephp/desktop": "^2.0"
     },
     "require-dev": {
         "fakerphp/faker": "^1.23",
@@ -50,7 +46,8 @@
             "@php artisan package:discover --ansi"
         ],
         "post-update-cmd": [
-            "@php artisan vendor:publish --tag=laravel-assets --ansi --force"
+            "@php artisan vendor:publish --tag=laravel-assets --ansi --force",
+            "@php artisan native:install --force --quiet "
         ],
         "post-root-package-install": [
             "@php -r \"file_exists('.env') || copy('.env.example', '.env');\""
@@ -62,6 +59,10 @@
         ],
         "pre-package-uninstall": [
             "Illuminate\\Foundation\\ComposerScripts::prePackageUninstall"
+        ],
+        "native:dev": [
+            "Composer\\Config::disableProcessTimeout",
+            "npx concurrently -k -c \"#93c5fd,#c4b5fd\" \"php artisan native:run --no-interaction\" \"npm run dev\" --names=app,vite"
         ]
     },
     "extra": {
