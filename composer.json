@@ -2,7 +2,7 @@
     "name": "andreamarelli/native-test",
     "description": "Test with nativephp/desktop and Laravel",
     "license": "MIT",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "require": {
         "php": "^8.4",
         "laravel/framework": "^12.0",
